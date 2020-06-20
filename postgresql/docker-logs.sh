@@ -1,1 +1,1 @@
- docker-compose logs -f --tail=500
+sudo docker-compose logs -f --tail=500
