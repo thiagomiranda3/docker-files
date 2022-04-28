@@ -1,25 +1,25 @@
-# Use postgres/example user/password credentials
 version: '3.3'
 
 services:
     db:
-        image: postgres:13-alpine
-        container_name: postgresql
+        image: postgres:12.3-alpine
+        container_name: postgres
         ports:
             - 5432:5432
         environment:
-            POSTGRES_PASSWORD: 123456
+            POSTGRES_PASSWORD: postgres
             POSTGRES_USER: postgres
+            POSTGRES_HOST_AUTH_METHOD: trust
         volumes:
             - ./data:/var/lib/postgresql/data
         restart: unless-stopped
 
     pgAdmin:
-        image: dpage/pgadmin4:4.24
+        image: dpage/pgadmin4:6.8
         container_name: pgAdmin
         ports:
-            - 8080:80
+            - 8081:80
         environment:
                 PGADMIN_DEFAULT_EMAIL: admin@thiago.com
-                PGADMIN_DEFAULT_PASSWORD: 123456
+                PGADMIN_DEFAULT_PASSWORD: postgres
         restart: unless-stopped
