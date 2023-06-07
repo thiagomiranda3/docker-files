@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo docker-compose kill
-sudo docker-compose up -d
+docker compose kill
+docker compose up -d
