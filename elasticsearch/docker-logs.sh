@@ -1,3 +1,1 @@
-#!/bin/bash
-
-docker compose logs -f --tail=500
+docker logs "${PWD##*/}" -f --tail 200

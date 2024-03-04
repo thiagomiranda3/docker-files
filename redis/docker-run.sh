@@ -6,7 +6,6 @@ docker container rm -f "${PWD##*/}" 2> /dev/null
 docker run \
         --name="${PWD##*/}" \
         -p 6379:6379 \
-	--restart unless-stopped \
 	--log-opt max-size=100m \
 	--log-opt max-file=10 \
         -d "${PWD##*/}"

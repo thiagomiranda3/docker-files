@@ -1,1 +1,1 @@
-FROM redis:6.2.7-alpine
+FROM arm64v8/redis:6.2.7-alpine
